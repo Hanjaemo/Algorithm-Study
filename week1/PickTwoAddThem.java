@@ -48,7 +48,6 @@ class Solution {
         }
 
         Arrays.sort(answer);
-
         System.out.println(Arrays.toString(answer));
     }
 
