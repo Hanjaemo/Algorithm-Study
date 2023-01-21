@@ -2,31 +2,46 @@ package week1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
-public class PickTwoAddThem {
+class PickTwoAddThem {
     public static void main(String[] args) {
         Solution solution = new Solution();
 
-        int[] numbers = {2, 1, 4, 5, 1};
+        int arrLength = new Scanner(System.in).nextInt();
+        int[] numbers = input(arrLength);
 
-        System.out.println(Arrays.toString(solution.solution(numbers)));
+        solution.add(numbers);
+        solution.printAnswer();
+
+    }
+
+    public static int[] input(int arrLength) {
+        Scanner scanner = new Scanner(System.in);
+        String[] input = scanner.nextLine().split(" ");
+        int[] numbers = new int[arrLength];
+        for (int i = 0; i < arrLength; i++) {
+            numbers[i] = Integer.parseInt(input[i]);
+        }
+        return numbers;
     }
 }
 
 class Solution {
-    public int[] solution(int[] numbers) {
-        ArrayList<Integer> list = new ArrayList<Integer>();
+    ArrayList<Integer> list = new ArrayList<Integer>();
 
-        for (int i=0; i<numbers.length; i++) {
-            for (int j=i+1; j<numbers.length; j++) {
+    public void add(int[] numbers) {
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
                 int num = numbers[i] + numbers[j];
-                if (list.indexOf(num) == -1) {
+                if (!contains(num)) {
                     list.add(num);
-
                 }
             }
         }
+    }
 
+    public void printAnswer() {
         int[] answer = new int[list.size()];
         for (int i=0; i<list.size(); i++) {
             answer[i] = list.get(i);
@@ -34,6 +49,10 @@ class Solution {
 
         Arrays.sort(answer);
 
-        return answer;
+        System.out.println(Arrays.toString(answer));
+    }
+
+    public boolean contains(int num) {
+        return list.contains(num);
     }
 }
