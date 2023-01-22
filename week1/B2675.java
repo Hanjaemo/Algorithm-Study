@@ -22,18 +22,37 @@ class B2675 {
         }
     }
 
+    /**
+     * scanner에 남아 있는 return을 소거한다.
+     * @param scanner
+     */
     static void extinctReturn(Scanner scanner) {
         String extinctReturn = scanner.nextLine();
     }
 
+    /**
+     * 반복횟수 유효성 검사
+     * @param repeat
+     * @return
+     */
     static boolean invalidRepeat(int repeat) {
         return !(1 <= repeat && repeat <= 8);
     }
 
+    /**
+     * 문자열 유효성 검사
+     * @param string
+     * @return
+     */
     static boolean invalidString(String string) {
         return !(1 <= string.length() && string.length() < 8);
     }
 
+    /**
+     * 문자열의 각 자리의 문자를 반복횟수만큼 반복 출력한다.
+     * @param repeat
+     * @param string
+     */
     static void repeatString(int repeat, String string) {
         for (int j=0; j<string.length(); j++) {
             for (int k=0; k<repeat; k++) {
