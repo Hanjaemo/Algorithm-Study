@@ -2,7 +2,7 @@ package week2;
 
 import java.util.Scanner;
 
-class Main {
+class B1546 {
     private static Scanner scanner = new Scanner(System.in);
     private static int nSubject;
     private static int[] scoreArr;
@@ -30,7 +30,7 @@ class Main {
             nSubject = Integer.parseInt(scanner.nextLine());
         }
 
-        Main b1546 = new Main();
+        B1546 b1546 = new B1546();
 
         scoreArr = b1546.setScoreArr();
         while (!validation.validateIsZero(scoreArr)) {
