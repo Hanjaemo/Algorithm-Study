@@ -6,15 +6,15 @@ class B5597 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        boolean[] students = new boolean[31];
+        boolean[] student = new boolean[31];
 
         for (int i=1; i<=28; i++) {
             int success = scanner.nextInt();
-            students[success] = true;
+            student[success] = true;
         }
 
         for (int i=1; i<=30; i++) {
-            if (!students[i]) {
+            if (!student[i]) {
                 System.out.println(i);
             }
         }
